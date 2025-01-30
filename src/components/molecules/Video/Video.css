@@ -1,0 +1,16 @@
+.video-wrapper {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-shadow: 0 0 1px black;
+}
+
+.video-player {
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: fill;;
+}
