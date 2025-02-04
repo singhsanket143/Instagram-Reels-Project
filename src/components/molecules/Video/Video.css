@@ -1,16 +1,100 @@
 .video-wrapper {
     position: relative;
-    background-color: white;
+    background-color: black; /* Change to black for better contrast */
     width: 100%;
     height: 100%;
-    text-shadow: 0 0 1px black;
+    overflow: hidden; /* Ensure nothing overflows the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-player {
-    /* position: absolute; */
-    /* top: 0;
-    left: 0; */
     width: 100%;
     height: 100%;
-    object-fit: fill;;
+    object-fit: cover; /* Use 'cover' to maintain aspect ratio */
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6)); /* Darker gradient for better readability */
+    pointer-events: none; /* Allow clicks to pass through to the video */
+}
+
+.video-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 12px;
+    bottom: 80px;
+    pointer-events: auto; /* Enable clicks on buttons */
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    pointer-events: auto; /* Enable clicks on buttons */
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+}
+
+.action-icon {
+    width: 28px;
+    height: 28px;
+    color: white;
+    stroke-width: 1.5;
+}
+
+.action-count {
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+.video-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 12px;
+    right: 70px;
+    pointer-events: auto; /* Enable clicks on caption */
+}
+
+.caption-text {
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Darker shadow for better readability */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.liked .action-icon {
+    animation: likeAnimation 0.3s ease forwards;
+    color: red;
+    fill: red;
+}
+
+@keyframes likeAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
