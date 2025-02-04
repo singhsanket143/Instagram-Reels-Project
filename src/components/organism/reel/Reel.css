@@ -1,0 +1,9 @@
+.container {
+    position: relative;
+    height: 90vh;
+    border-radius: 25px;
+    width: 50vh;
+    overflow: scroll;
+    scrollbar-width: none; /* It will hide the scrollbar*/
+    scroll-snap-type: y mandatory; /** It will snap the scroll to the nearest element */
+  }
